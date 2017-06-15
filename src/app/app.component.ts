@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ElementRef, Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,33 +9,54 @@ export class AppComponent {
 
  myshow = null;
  myarray= [];
+ loser = null;
 
+ loserStyle(){
+   return this.loser
+ }
+ngOnInit(){
+  this.bombArray();
+}
    bombArray(){
     for(var i = 1; i <= 64; i++){
       this.myarray.push(i);
     }
     for(var i = 1; i <= 15; i++){
-      if(this.myarray[Math.floor(Math.random()*64)] = 'bomb'){
+      if(this.myarray[(Math.floor(Math.random()*64)+1)] = 'bomb'){
         i - 1
       }else{
-        this.myarray[Math.floor(Math.random()*64)] = 'bomb';
+        this.myarray[(Math.floor(Math.random()*64)+1)] = 'bomb';
       }
     }
 
    this.bombArea(this.myarray);
   }
 
-  testIt(stuff){
-    if(stuff == 'bomb'){
-      alert("You Loser!!");
-    }else{
-      // if(stuff===0){
-      //
-      // }
+  counter = 0;
+  addCount(){
+    this.counter += 1;
+    if(this.counter === 49){
+      this.loser = ("winner"+((Math.floor(Math.random()*5)+1).toString()));
+      console.log(this.loser)
+      // alert('You Win!')
 
-      alert('safe')
     }
   }
+
+  testIt(stuff, event){
+    if(stuff == 'bomb'){
+      alert("You Loser!!");
+      this.loser = 'loser';
+    }else{
+
+    }
+  }
+// open bonus spaces  ********  call in testIt??
+  // if 0 {
+  //   run neighbors function,
+  //   open/'clickity' all neighbors + add them to counter,
+  //   if any neighbor is 0, run again
+  // }
 
 neighbors = [];
  neighbor(num) {
@@ -52,7 +73,7 @@ neighbors = [];
    return this.neighbors.sort()
   }
 
-
+// left: number[] = []
 neigh:number[]= []
 test = [];
 bombArea = function(myarray){
@@ -60,7 +81,6 @@ bombArea = function(myarray){
     if(bob != 'bomb'){
       this.neigh = [];
       this.neigh = this.neighbor(bob);
-      console.log(this.neigh)
       var count = 0;
       this.neigh.forEach((numm)=>{
         if(myarray[(numm-1)] == 'bomb'){
@@ -70,7 +90,6 @@ bombArea = function(myarray){
       this.myarray[bob-1] = (count);
     }
   })
-  console.log(this.test)
   this.myarray;
 
   this.myshow=1;

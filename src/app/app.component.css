@@ -14,6 +14,57 @@ td:hover{
   border: 1px solid white;
   background-color: lightgray;
 }
-/*span{
+span{
+  /*display: none;*/
+}
+
+.loser {
+  background-image: url('http://4.bp.blogspot.com/-q0C1tzJZ-cc/VVxvYNDcThI/AAAAAAAAEJY/OuxTyrmCz2Q/s1600/Running.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.loser td {
   display: none;
-}*/
+}
+
+.winner1 {
+  background-image: url('http://www.reactiongifs.com/r/iwin.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.winner1 td {
+  display: none;
+}
+
+.winner2 {
+  background-image: url('http://www.reactiongifs.com/r/hfma.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.winner2 td {
+  display: none;
+}
+.winner3 {
+  background-image: url('https://media.giphy.com/media/lFyV2QVdSHgpa/giphy.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.winner3 td {
+  display: none;
+}
+.winner4 {
+  background-image: url('https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr01/2013/8/25/18/anigif_enhanced-buzz-9767-1377469019-11.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.winner4 td {
+  display: none;
+}
+.winner5 {
+  background-image: url('https://31.media.tumblr.com/e09f49af091adc39eeb80b5bc971013f/tumblr_inline_n2lpu3KXmh1re1pez.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.winner5 td {
+  display: none;
+}

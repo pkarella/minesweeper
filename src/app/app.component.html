@@ -3,100 +3,99 @@
   <h1>
     Welcome to {{title}}!!
   </h1>
-  <button (click)="bombArray()">Make BombArray</button>
+  <button (click)="reset()"><a href=''>Reset Table</a></button>
 <br><br>
 
-  <table *ngIf="myshow" id="c">
+  <table [class]="loserStyle()" *ngIf="myshow" id="c">
       <tr>
-        <td (click)="testIt(myarray[0])"><span>{{myarray[0]}}</span></td>
-        <td (click)="testIt(myarray[1])"><span>{{myarray[1]}}</span></td>
-        <td (click)="testIt(myarray[2])"><span>{{myarray[2]}}</span></td>
-        <td (click)="testIt(myarray[3])"><span>{{myarray[3]}}</span></td>
-        <td (click)="testIt(myarray[4])"><span>{{myarray[4]}}</span></td>
-        <td (click)="testIt(myarray[5])"><span>{{myarray[5]}}</span></td>
-        <td (click)="testIt(myarray[6])"><span>{{myarray[6]}}</span></td>
-        <td (click)="testIt(myarray[7])"><span>{{myarray[7]}}</span></td>
+        <td appClickity (addCount)='addCount()' (click)="testIt(myarray[0])"><span>{{myarray[0]}}</span></td>
+        <td appClickity (addCount)='addCount()' (click)="testIt(myarray[1])"><span>{{myarray[1]}}</span></td>
+        <td appClickity (addCount)='addCount()' (click)="testIt(myarray[2])"><span>{{myarray[2]}}</span></td>
+        <td appClickity (addCount)='addCount()' (click)="testIt(myarray[3])"><span>{{myarray[3]}}</span></td>
+        <td appClickity (addCount)='addCount()' (click)="testIt(myarray[4])"><span>{{myarray[4]}}</span></td>
+        <td appClickity (addCount)='addCount()' (click)="testIt(myarray[5])"><span>{{myarray[5]}}</span></td>
+        <td appClickity (addCount)='addCount()' (click)="testIt(myarray[6])"><span>{{myarray[6]}}</span></td>
+        <td appClickity (addCount)='addCount()' (click)="testIt(myarray[7])"><span>{{myarray[7]}}</span></td>
       </tr>
 
       <tr>
-        <td><span>{{myarray[8]}}</span></td>
-        <td ><span>{{myarray[9]}}</span></td>
-        <td><span>{{myarray[10]}}</span></td>
-        <td><span>{{myarray[11]}}</span></td>
-        <td><span>{{myarray[12]}}</span></td>
-        <td><span>{{myarray[13]}}</span></td>
-        <td><span>{{myarray[14]}}</span></td>
-        <td><span>{{myarray[15]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[8])"><span>{{myarray[8]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[9])"><span>{{myarray[9]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[10])"><span>{{myarray[10]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[11])"><span>{{myarray[11]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[12])"><span>{{myarray[12]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[13])"><span>{{myarray[13]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[14])"><span>{{myarray[14]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[15])"><span>{{myarray[15]}}</span></td>
       </tr>
 
       <tr>
-        <td><span>{{myarray[16]}}</span></td>
-        <td><span>{{myarray[17]}}</span></td>
-        <td><span>{{myarray[18]}}</span></td>
-        <td><span>{{myarray[19]}}</span></td>
-        <td><span>{{myarray[20]}}</span></td>
-        <td><span>{{myarray[21]}}</span></td>
-        <td><span>{{myarray[22]}}</span></td>
-        <td><span>{{myarray[23]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[16])"><span>{{myarray[16]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[17])"><span>{{myarray[17]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[18])"><span>{{myarray[18]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[19])"><span>{{myarray[19]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[20])"><span>{{myarray[20]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[21])"><span>{{myarray[21]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[22])"><span>{{myarray[22]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[23])"><span>{{myarray[23]}}</span></td>
 
       </tr>
       <tr>
-        <td><span>{{myarray[24]}}</span></td>
-        <td><span>{{myarray[25]}}</span></td>
-        <td><span>{{myarray[26]}}</span></td>
-        <td><span>{{myarray[27]}}</span></td>
-        <td><span>{{myarray[28]}}</span></td>
-        <td><span>{{myarray[29]}}</span></td>
-        <td><span>{{myarray[30]}}</span></td>
-        <td><span>{{myarray[31]}}</span></td>
-
-      </tr>
-
-      <tr>
-        <td><span>{{myarray[32]}}</span></td>
-        <td><span>{{myarray[33]}}</span></td>
-        <td><span>{{myarray[34]}}</span></td>
-        <td><span>{{myarray[35]}}</span></td>
-        <td><span>{{myarray[36]}}</span></td>
-        <td><span>{{myarray[37]}}</span></td>
-        <td><span>{{myarray[38]}}</span></td>
-        <td><span>{{myarray[39]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[24])"><span>{{myarray[24]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[25])"><span>{{myarray[25]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[26])"><span>{{myarray[26]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[27])"><span>{{myarray[27]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[28])"><span>{{myarray[28]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[29])"><span>{{myarray[29]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[30])"><span>{{myarray[30]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[31])"><span>{{myarray[31]}}</span></td>
 
       </tr>
 
       <tr>
-        <td><span>{{myarray[40]}}</span></td>
-        <td><span>{{myarray[41]}}</span></td>
-        <td><span>{{myarray[42]}}</span></td>
-        <td><span>{{myarray[43]}}</span></td>
-        <td><span>{{myarray[44]}}</span></td>
-        <td><span>{{myarray[45]}}</span></td>
-        <td><span>{{myarray[46]}}</span></td>
-        <td><span>{{myarray[47]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[32])"><span>{{myarray[32]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[33])"><span>{{myarray[33]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[34])"><span>{{myarray[34]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[35])"><span>{{myarray[35]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[36])"><span>{{myarray[36]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[37])"><span>{{myarray[37]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[38])"><span>{{myarray[38]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[39])"><span>{{myarray[39]}}</span></td>
+      </tr>
+
+      <tr>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[40])"><span>{{myarray[40]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[41])"><span>{{myarray[41]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[42])"><span>{{myarray[42]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[43])"><span>{{myarray[43]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[44])"><span>{{myarray[44]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[45])"><span>{{myarray[45]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[46])"><span>{{myarray[46]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[47])"><span>{{myarray[47]}}</span></td>
 
       </tr>
 
       <tr>
-        <td><span>{{myarray[48]}}</span></td>
-        <td><span>{{myarray[49]}}</span></td>
-        <td><span>{{myarray[50]}}</span></td>
-        <td><span>{{myarray[51]}}</span></td>
-        <td><span>{{myarray[52]}}</span></td>
-        <td><span>{{myarray[53]}}</span></td>
-        <td><span>{{myarray[54]}}</span></td>
-        <td><span>{{myarray[55]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[48])"><span>{{myarray[48]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[49])"><span>{{myarray[49]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[50])"><span>{{myarray[50]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[51])"><span>{{myarray[51]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[52])"><span>{{myarray[52]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[53])"><span>{{myarray[53]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[54])"><span>{{myarray[54]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[55])"><span>{{myarray[55]}}</span></td>
 
       </tr>
 
       <tr>
-        <td><span>{{myarray[56]}}</span></td>
-        <td><span>{{myarray[57]}}</span></td>
-        <td><span>{{myarray[58]}}</span></td>
-        <td><span>{{myarray[59]}}</span></td>
-        <td><span>{{myarray[60]}}</span></td>
-        <td><span>{{myarray[61]}}</span></td>
-        <td><span>{{myarray[62]}}</span></td>
-        <td><span>{{myarray[63]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[56])"><span>{{myarray[56]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[57])"><span>{{myarray[57]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[58])"><span>{{myarray[58]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[59])"><span>{{myarray[59]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[60])"><span>{{myarray[60]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[61])"><span>{{myarray[61]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[62])"><span>{{myarray[62]}}</span></td>
+        <td appClickity (addCount)='addCount()'(click)="testIt(myarray[63])"><span>{{myarray[63]}}</span></td>
 
       </tr>
     </table>
