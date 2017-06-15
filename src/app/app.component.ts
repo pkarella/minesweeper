@@ -35,7 +35,8 @@ ngOnInit(){
   counter = 0;
   addCount(){
     this.counter += 1;
-    if(this.counter === 19){
+    console.log(this.counter)
+    if(this.counter === 49){
       this.loser = ("winner"+((Math.floor(Math.random()*5)+1).toString()));
       console.log(this.loser)
       // alert('You Win!')
