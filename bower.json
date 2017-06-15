@@ -3,7 +3,7 @@
   "description": "",
   "main": "",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/twyststar/minesweeper",
   "ignore": [
     "**/.*",
     "node_modules",

@@ -27,15 +27,19 @@ export class AppComponent {
 
   testIt(stuff){
     if(stuff == 'bomb'){
-      console.log('kaboom');
+      alert("You Loser!!");
     }else{
+      // if(stuff===0){
+      //
+      // }
 
-      console.log('safe')
+      alert('safe')
     }
   }
 
 neighbors = [];
  neighbor(num) {
+    this.neighbors = [];
     this.neighbors.push(num - 1)
     this.neighbors.push(num - 8)
     this.neighbors.push(num - 7)
@@ -53,8 +57,10 @@ neigh:number[]= []
 test = [];
 bombArea = function(myarray){
   myarray.forEach((bob)=>{
-    this.neigh = this.neighbor(bob);
     if(bob != 'bomb'){
+      this.neigh = [];
+      this.neigh = this.neighbor(bob);
+      console.log(this.neigh)
       var count = 0;
       this.neigh.forEach((numm)=>{
         if(myarray[(numm-1)] == 'bomb'){
