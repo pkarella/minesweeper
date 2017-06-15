@@ -18,11 +18,11 @@ constructor(private el: ElementRef, private renderer: Renderer){
 
   private highlight(color: string) {
     if(!this.clicked){
-      // this.el.nativeElement.nextElementSibling.style.backgroundColor = "blue";
+
       // console.log(this.el.nativeElement.childNodes[0].textContent);
       this.el.nativeElement.childNodes[0].style.display = "inline";
       this.el.nativeElement.style.backgroundColor = "lightgray";
-      // this.el.nativeElement.childNodes[0].style.backgroundColor = color;
+      
       console.log(this)
       this.addCount.emit();
       this.clicked = true;

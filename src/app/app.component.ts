@@ -18,7 +18,7 @@ ngOnInit(){
   this.bombArray();
 }
    bombArray(){
-    for(var i = 1; i <= 64; i++){
+    for(var i = 0; i <= 63; i++){
       this.myarray.push(i);
     }
     for(var i = 1; i <= 15; i++){
@@ -35,7 +35,7 @@ ngOnInit(){
   counter = 0;
   addCount(){
     this.counter += 1;
-    if(this.counter === 49){
+    if(this.counter === 19){
       this.loser = ("winner"+((Math.floor(Math.random()*5)+1).toString()));
       console.log(this.loser)
       // alert('You Win!')
@@ -59,6 +59,26 @@ ngOnInit(){
   // }
 
 neighbors = [];
+leftNeighbor(num) {
+   this.neighbors = [];
+   this.neighbors.push(num - 8)
+   this.neighbors.push(num - 7)
+   this.neighbors.push(num + 1)
+   this.neighbors.push(num + 8)
+   this.neighbors.push(num + 9)
+   this.neighbors = this.neighbors.filter(function(x){ return x > 0 });
+  return this.neighbors.sort()
+ }
+ rightNeighbor(num) {
+    this.neighbors = [];
+    this.neighbors.push(num - 1)
+    this.neighbors.push(num - 8)
+    this.neighbors.push(num - 9)
+    this.neighbors.push(num + 8)
+    this.neighbors.push(num + 7)
+    this.neighbors = this.neighbors.filter(function(x){ return x > 0 });
+   return this.neighbors.sort()
+  }
  neighbor(num) {
     this.neighbors = [];
     this.neighbors.push(num - 1)
@@ -72,22 +92,31 @@ neighbors = [];
     this.neighbors = this.neighbors.filter(function(x){ return x > 0 });
    return this.neighbors.sort()
   }
-
-// left: number[] = []
+right: number[] = [7, 15, 23, 31, 39, 47, 55, 63]
+left: number[] = [0, 8, 16, 24, 32, 40, 48, 56]
 neigh:number[]= []
 test = [];
 bombArea = function(myarray){
   myarray.forEach((bob)=>{
+
     if(bob != 'bomb'){
+      if(this.left.includes(bob)){
+        this.neigh = [];
+        this.neigh = this.leftNeighbor(bob);
+      }else if(this.right.includes(bob)){
+        this.neigh = [];
+        this.neigh = this.rightNeighbor(bob);
+      }else{
       this.neigh = [];
       this.neigh = this.neighbor(bob);
+      }
       var count = 0;
       this.neigh.forEach((numm)=>{
-        if(myarray[(numm-1)] == 'bomb'){
+        if(myarray[(numm)] == 'bomb'){
           count += 1;
         }
       })
-      this.myarray[bob-1] = (count);
+      this.myarray[bob] = (count);
     }
   })
   this.myarray;
